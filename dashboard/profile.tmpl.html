@@ -1,0 +1,16 @@
+<md-content layout="column" layout-wrap>
+    <md-toolbar layout="row">
+    <div class="md-toolbar-tools greyed">
+        <h1>{{ProfileCtl.text}}</h1>
+    </div>
+    <button ui-sref="/">Back</button>
+    </md-toolbar>  
+
+    
+  <md-whiteframe class="md-whiteframe-1dp" layout="column" layout-align="center center">
+    <h2>{{ProfileCtl.myprofile.first_name}}</h2>
+    <h2>{{ProfileCtl.myprofile.last_name}}</h2>
+    <h2>{{ProfileCtl.myprofile.birth_date | date: 'dd/MM/yyyy'}}</h2>
+  </md-whiteframe>
+ 
+</md-content>

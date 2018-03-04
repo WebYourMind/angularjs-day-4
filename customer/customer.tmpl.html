@@ -1,0 +1,87 @@
+<div class="md-inline-form ddway-form" flex layout="row" layout-padding>
+
+  <div flex>
+    <form name="customerForm" novalidate>
+      <md-toolbar layout="row">
+        <div class="md-toolbar-tools greyed">
+          <h1 translate="CUSTOMER_ENTRY_FORM_TITLE">Customer Entry Form</h1>
+        </div>
+      </md-toolbar>
+      <md-content layout="column" layout-padding>
+
+        <div layout="row">
+          <md-input-container class="md-block">
+            <label for="firstName"> First Name </label>
+
+            <input type="text" name="firstName" ng-model="customerCtl.newUserForm.first_name" ng-required="customerCtl.newUserForm.last_name !=='Rossetti'"
+              ng-minlength="2" ng-maxlength="20">
+
+            <div ng-messages="customerForm.firstName.$error">
+              <div ng-message="required"> This field is required </div>
+              <div ng-message="minlength"> Too Short (min 2 characters)</div>
+              <div ng-message="maxlength"> Too Long (max 20 characters) </div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block">
+            <label for="lastName"> Last Name </label>
+            <input type="text" name="lastName" ng-model="customerCtl.newUserForm.last_name" required ng-minlength="2" ng-maxlength="20">
+
+            <div ng-messages="customerForm.lastName.$error">
+              <div ng-message="required"> This field is required </div>
+              <div ng-message="minlength"> Too Short (min 2 characters)</div>
+              <div ng-message="maxlength"> Too Long (max 20 characters) </div>
+            </div>
+          </md-input-container>
+
+        </div>
+        <div layout>
+          <md-input-container>
+            <label for="birthDate"> Birth Date </label>
+            <input type="date" name="birthDate" ng-model="customerCtl.newUserForm.birth_date">
+          </md-input-container>
+          <md-input-container>
+            <label for="iban"> IBAN </label>
+            <input type="text" name="iban" ng-model="customerCtl.newUserForm.iban">
+          </md-input-container>
+          <md-input-container>
+            <label for="creditCardNo"> Credit Card No. </label>
+            <input type="text" name="creditCardNo" ng-model="customerCtl.newUserForm.credit_card_no" ng-pattern="/^[0-9]*$/">
+
+            <div ng-messages="customerForm.creditCardNo.$error">
+              <div ng-message="pattern"> Please enter a number </div>
+            </div>
+          </md-input-container>
+        </div>
+        <md-button class="md-raised md-primary greyed" type="submit" ng-click="CustomerCtl.addNewCustomer(customerCtl.newUserForm)">Submit</md-button>
+      </md-content>
+    </form>
+  </div>
+  <div layout="column"  layout-align="start center">
+    <md-toolbar layout="row">
+      <div class="md-toolbar-tools greyed">
+        <h1 translate="CUSTOMER_SEARCH">Customer Search</h1>
+      </div>
+    </md-toolbar>
+    <md-content>
+      <md-input-container>
+        <label>Search</label>
+        <input type="text" ng-model="CustomerCtl.search">
+      </md-input-container>
+
+    </md-content>
+    <md-toolbar layout="row">
+      <div class="md-toolbar-tools greyed">
+        <h1 translate="LANGUAGE">Language</h1>
+      </div>
+    </md-toolbar>
+    <md-content ng-controller="LanguageController as LangCtl">
+      <md-input-container>
+        <button translate="BUTTON_LANG_EN" ng-click="LangCtl.changeLang('en')">English</button>
+        <button translate="BUTTON_LANG_IT" ng-click="LangCtl.changeLang('it')">Italian</button>
+      </md-input-container>
+
+    </md-content>    
+  </div>
+
+
+</div>
