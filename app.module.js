@@ -1,7 +1,7 @@
 (function(){
 
 angular.module('app', ['app.customer','app.dashboard', 
-                        'ngMessages', 'ui.router', 'ngMockE2E', 
+                        'ngMessages', 'ui.router', 
                         'ngMaterial', 'pascalprecht.translate']);
 
 })();

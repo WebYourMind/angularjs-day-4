@@ -23,19 +23,13 @@
                 .state('dashboard', {
                     abstract: true,
                     resolve: {
-                        /*myprofile: function (DashboardFactory) {
-                            console.log('***** calling dashboard factory');
-                            var retVal =  DashboardFactory.getMyProfile();
-                            console.log('***** retVal dashboard factory', retVal);
-                            return retVal;
-                        }      */
                         myprofile: function ($timeout) {
                             return $timeout(function () {
                                 return {
                                     "id": 0,
                                     "first_name": "Simone",
                                     "last_name": "Torrisi",
-                                    "birth_date": new Date(1980, 10, 20)
+                                    "birth_date": new Date(1980, 9, 20)
                                 }
                             }, 250);
                         }
@@ -51,33 +45,6 @@
             $urlRouterProvider.otherwise("/");
             // configure html5 for friendly URL
             $locationProvider.html5Mode(true);
-        })
-        /*
-        .config(function ($translateProvider) {
-            $translateProvider.translations('en', {
-                CUSTOMER_ENTRY_FORM_TITLE: 'Customer Entry Form',
-                DASHBOARD: 'Dashboard',
-                CUSTOMER_SEARCH: 'Customer Search',
-                LANGUAGE: 'Language',
-                BUTTON_LANG_EN: 'english',
-                BUTTON_LANG_IT: 'italian'
-            });
-            $translateProvider.translations('it', {
-                CUSTOMER_ENTRY_FORM_TITLE: 'Modulo Inserimento Cliente',
-                DASHBOARD: 'Cruscotto',
-                CUSTOMER_SEARCH: 'Ricerca cliente',
-                LANGUAGE: 'Lingua',
-                BUTTON_LANG_EN: 'inglese',
-                BUTTON_LANG_IT: 'italiano'
-            });
-            $translateProvider.preferredLanguage('it');
-        })*/
-        .config(function ($translateProvider) {
-            $translateProvider.useStaticFilesLoader({
-                prefix: 'language/locale-',
-                suffix: '.json'
-            });
-            $translateProvider.preferredLanguage('it');
         });
 })();
 
