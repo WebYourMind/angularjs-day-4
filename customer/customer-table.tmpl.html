@@ -1,0 +1,8 @@
+<table>
+        <thead>
+          <th ng-repeat="header in ::customerTableCtl.headerFields">
+            {{::header}}
+          </th>
+        </thead>
+        <tr ng-repeat="customer in customerTableCtl.customers | filter: customerTableCtl.search | orderBy: 'id' track by customer.id" customer-row customer="customer"></tr>
+      </table>

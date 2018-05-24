@@ -1,5 +1,5 @@
 (function(){
 
-angular.module('app.customer', ['ngMaterial']);
+angular.module('app.customer', []);
 
 })();

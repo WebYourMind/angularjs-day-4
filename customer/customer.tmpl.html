@@ -32,6 +32,14 @@
               <div ng-message="maxlength"> Too Long (max 20 characters) </div>
             </div>
           </md-input-container>
+          <md-input-container class="md-block">
+            <label for="balance"> Balance </label>
+            <input type="text" name="balance" ng-model="customerCtl.newUserForm.balance" required>
+            <div ng-messages="customerForm.balance.$error">
+              <div ng-message="required"> This field is required </div>
+
+            </div>
+          </md-input-container>
 
         </div>
         <div layout>
@@ -45,7 +53,7 @@
           </md-input-container>
           <md-input-container>
             <label for="creditCardNo"> Credit Card No. </label>
-            <input type="text" name="creditCardNo" ng-model="customerCtl.newUserForm.credit_card_no" ng-pattern="/^[0-9]*$/">
+            <input type="text" name="creditCardNo" ng-model="customerCtl.newUserForm.credit_card" ng-pattern="/^[0-9]*$/">
 
             <div ng-messages="customerForm.creditCardNo.$error">
               <div ng-message="pattern"> Please enter a number </div>
@@ -56,7 +64,7 @@
       </md-content>
     </form>
   </div>
-  <div layout="column"  layout-align="start center">
+  <div layout="column" layout-align="start center">
     <md-toolbar layout="row">
       <div class="md-toolbar-tools greyed">
         <h1 translate="CUSTOMER_SEARCH">Customer Search</h1>
@@ -80,7 +88,7 @@
         <button translate="BUTTON_LANG_IT" ng-click="LangCtl.changeLang('it')">Italian</button>
       </md-input-container>
 
-    </md-content>    
+    </md-content>
   </div>
 
 
